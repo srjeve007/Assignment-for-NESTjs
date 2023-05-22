@@ -4,6 +4,7 @@
         "dateofbirth",
         "firstname",
         "lastname",
-        "userdata"
+        "userdata",
+        "usersdata"
     ]
 }

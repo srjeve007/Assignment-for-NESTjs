@@ -1,4 +1,6 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Exclude } from "class-transformer";
+import { User } from "src/auth/user.entity";
+import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn ,ManyToOne} from "typeorm";
 
 
 @Entity()
@@ -33,7 +35,7 @@ export class Userdata extends BaseEntity{
      updatedOn: Date;
     credential: any;
 
-    // @ManyToOne((_type) =>UserCredentials, (userCredential)=>userCredential.userdatas, {eager:false})
-    // @Exclude({ toPlainOnly:true})
-    // userCredentials:UserCredentials;
+     @ManyToOne((_type) =>User, (user)=>user.userdatas, {eager:false})
+     @Exclude({ toPlainOnly:true})
+     user:User;
 }

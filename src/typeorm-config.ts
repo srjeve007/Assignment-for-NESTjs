@@ -1,5 +1,6 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 import { Userdata } from "./userdata/userdata.entity";
+import { User } from "./auth/user.entity";
 
 
 export const typeOrmConfig : TypeOrmModuleOptions= {
@@ -10,6 +11,6 @@ export const typeOrmConfig : TypeOrmModuleOptions= {
     password:'Shubh@7507',
     database:'assignment',
     synchronize:true,
-    entities: [Userdata]
+    entities: [Userdata,User]
 
 }
